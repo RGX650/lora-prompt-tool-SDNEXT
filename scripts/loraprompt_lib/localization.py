@@ -356,7 +356,7 @@ def get_localize(msg):
     if msg in my_localization_data:
         if local_id in my_localization_data[msg]:
             return my_localization_data[msg][local_id]
-        prefix_id = re.sub(r"[_\-\s]+","_", local_id).split("_")[0]
+        prefix_id = re.sub(r"[_\-\s]+", "_", local_id).split("_")[0]
         if prefix_id in my_localization_data[msg]:
             return my_localization_data[msg][prefix_id]
     return msg
