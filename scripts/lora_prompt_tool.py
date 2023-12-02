@@ -59,7 +59,7 @@ def on_ui_tabs():
                             with gr.Column(elem_id="lorahelp_simpleedit_group_neg"):
                                 simpleedit_neg_enable = gr.Checkbox(value=False,label="Dedicated negative prompt", interactive=True, elem_id="lorahelp_simpleedit_group_neg_enabled")
                                 with gr.Column(elem_id="lorahelp_simpleedit_group_neg_body"):
-                                    simpleedit_neg_name = gr.Textbox(label="Dedicated negative prompt name", interactive=True, placeholder="EX: negative prompt for Mahiro"))
+                                    simpleedit_neg_name = gr.Textbox(label="Dedicated negative prompt name", interactive=True, placeholder="EX: negative prompt for Mahiro")
                                     simpleedit_neg_triggerword = gr.Textbox(label="Negative prompt", interactive=True, placeholder="EX: ugly, bad")
                         simpleedit_apply = gr.Button(value="Apply data")
                         simpleedit_parms=[simpleedit_main_name, simpleedit_main_triggerword, simpleedit_extra_enable, simpleedit_extra_name, simpleedit_extra_triggerword, simpleedit_neg_enable, simpleedit_neg_name, simpleedit_neg_triggerword]
