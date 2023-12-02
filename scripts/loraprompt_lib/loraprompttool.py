@@ -3,7 +3,7 @@ import requests
 from . import libdata
 from . import util
 from . import model
-from modules import localization
+from . import localization
 
 source_filename = "loraprompttool"
 
