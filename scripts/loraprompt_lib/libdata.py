@@ -97,11 +97,11 @@ model_type_dict = {
 }
 
 model_type_names = {
-    "ckp": "Checkpoint",
-    "ti": "TextualInversion",
-    "hyper": "Hypernetwork",
-    "lora": "LORA",
-    "lyco": "LyCORIS",
+    "ckp": "Stable-diffusion",
+    "ti": "embeddings",
+    "hyper": "hypernetwork",
+    "lora": "Lora",
+    "lyco": "Lycoris",
 }
 
 civitai_apis = {
