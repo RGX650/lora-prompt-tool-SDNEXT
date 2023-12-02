@@ -351,7 +351,7 @@ def load_localization(current_localization_name):
             print(f"Error loading localization from {fn}")
 
 def get_localize(msg):
-    if local_id = "en":
+    if local_id == "en":
         return msg  # Return the original message if the language is English
 
     if msg in local_data:
