@@ -16,10 +16,9 @@ from scripts.loraprompt_lib import setting
 model.get_custom_model_folder()
 setting.load_setting()
 util.set_debug_logging_state(ajax_action.flag_to_boolean(setting.get_setting("debug")))
-local_id = ""
 
 def on_ui_tabs():
-    local_id == "en"
+    local_id = "en"
     localization.load_localization(local_id)
     with gr.Blocks(analytics_enabled=False) as lora_prompt_helper:
         txt2img_prompt = modules.ui.txt2img_paste_fields[0][0]
