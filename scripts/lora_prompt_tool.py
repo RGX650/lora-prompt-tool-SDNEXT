@@ -16,6 +16,7 @@ from scripts.loraprompt_lib import setting
 model.get_custom_model_folder()
 setting.load_setting()
 util.set_debug_logging_state(ajax_action.flag_to_boolean(setting.get_setting("debug")))
+local_id = ""
 
 def on_ui_tabs():
     local_id == "en"
