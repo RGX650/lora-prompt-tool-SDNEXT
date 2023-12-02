@@ -6,7 +6,7 @@ from modules import shared
 source_filename = "localization"
 
 local_data = {}
-local_id == "en"  # Set default localization to English
+local_id = "en"  # Set default localization to English
 
 localizations = {}
 localizations_dir = "localizations"
