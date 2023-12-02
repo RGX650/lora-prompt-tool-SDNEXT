@@ -9,7 +9,7 @@ from scripts.loraprompt_lib import libdata
 from scripts.loraprompt_lib import model
 from scripts.loraprompt_lib import ajax_action
 from scripts.loraprompt_lib import dataframe_edit
-#from scripts.loraprompt_lib import localization
+from scripts.loraprompt_lib import localization
 from scripts.loraprompt_lib import util
 from scripts.loraprompt_lib import setting
 
