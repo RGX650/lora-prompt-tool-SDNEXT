@@ -8,6 +8,9 @@ source_filename = "localization"
 local_data = {}
 local_id = "en"  # Set default localization to English
 
+localizations = {}
+localizations_dir = "localizations"
+
 my_localization_data = {
   "Edit Model Basic Data": {
     "zh_TW": "編輯模型基礎資料",
