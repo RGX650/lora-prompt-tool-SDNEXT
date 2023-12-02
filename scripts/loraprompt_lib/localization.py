@@ -8,25 +8,6 @@ source_filename = "localization"
 local_data = {}
 local_id = "en"  # Set default localization to English
 
-localizations = {}
-localizations_dir = "localizations"
-
-def list_localizations(dirname):
-    localizations.clear()
-    for file in os.listdir(dirname):
-        fn, ext = os.path.splitext(file)
-        if ext.lower() != ".json":
-            continue
-
-        localizations[fn] = os.path.join(dirname, file)
-
-    from modules import scripts
-    for file in scripts.list_scripts("localizations", ".json"):
-        fn, ext = os.path.splitext(file.filename)
-        localizations[fn] = file.path
-        
-list_localizations(localizations_dir)
-
 my_localization_data = {
   "Edit Model Basic Data": {
     "zh_TW": "編輯模型基礎資料",
@@ -358,8 +339,8 @@ def load_localization(current_localization_name):
     global local_data
     global local_id
     local_id = current_localization_name
-    fn = localizations.get(current_localization_name, None)
-    if fn is not None:
+    if current_localization_name != "en":
+        fn = f"{current_localization_name}.json"  # Assuming file names are language codes
         try:
             with open(fn, "r", encoding="utf8") as file:
                 local_data = json.load(file)
@@ -370,14 +351,13 @@ def get_localize(msg):
     if local_id == "en":
         return msg  # Return the original message if the language is English
 
-    # Your existing localization logic here
-    if msg in local_data.keys():
+    if msg in local_data:
         return local_data[msg]
-    if msg in my_localization_data.keys():
-        if local_id in my_localization_data[msg].keys():
+    if msg in my_localization_data:
+        if local_id in my_localization_data[msg]:
             return my_localization_data[msg][local_id]
-        prefix_id = re.sub(r"[_\-\s]+","_",local_id).split("_")[0]
-        if prefix_id in my_localization_data[msg].keys():
+        prefix_id = re.sub(r"[_\-\s]+","_", local_id).split("_")[0]
+        if prefix_id in my_localization_data[msg]:
             return my_localization_data[msg][prefix_id]
     return msg
 
