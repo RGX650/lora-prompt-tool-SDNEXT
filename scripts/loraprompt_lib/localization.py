@@ -9,7 +9,8 @@ local_data = {}
 local_id = ""
 
 localizations = {}
-localizations_dir = shared.cmd_opts.localizations_dir if "localizations_dir" in shared.cmd_opts else "localizations"
+#localizations_dir = shared.cmd_opts.localizations_dir if "localizations_dir" in shared.cmd_opts else "localizations"
+localizations_dir = "localizations"
 
 def list_localizations(dirname):
     localizations.clear()
@@ -24,6 +25,8 @@ def list_localizations(dirname):
     for file in scripts.list_scripts("localizations", ".json"):
         fn, ext = os.path.splitext(file.filename)
         localizations[fn] = file.path
+     return localizations
+
 list_localizations(localizations_dir)
 
 my_localization_data = {
