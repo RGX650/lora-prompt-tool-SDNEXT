@@ -124,7 +124,7 @@ def on_ui_tabs():
                 with gr.Column():
                     js_message_report = gr.Textbox(label="Message", interactive=False, elem_id="lorahelp_js_output_message")
             js_save_model_setting_btn = gr.Button(value="Save"), 
-                elem_id="lorahelp_js_save_model_setting_btn", variant="primary"
+            elem_id="lorahelp_js_save_model_setting_btn", variant="primary"
             )
 
             #導入功能區
