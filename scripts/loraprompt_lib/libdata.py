@@ -35,8 +35,16 @@ refresh_symbol = '\U0001f504'  # 🔄
 folders = {
     "ti": os.path.join(root_path, "embeddings"),
     "hyper": os.path.join(root_path, "models", "hypernetworks"),
-    "ckp": os.path.join(root_path, "models", "Stable-diffusion"),
-    "lora": os.path.join(root_path, "models", "Lora"),
+    "ckp": {
+        "main": os.path.join(root_path, "models", "Stable-diffusion"),
+        "SD15": os.path.join(root_path, "models", "Stable-diffusion", "SD15"),
+        "SDXL": os.path.join(root_path, "models", "Stable-diffusion", "SDXL"),
+    },
+    "lora": {
+        "main": os.path.join(root_path, "models", "Lora"),
+        "SD15": os.path.join(root_path, "models", "Lora", "SD15"),
+        "SDXL": os.path.join(root_path, "models", "Lora", "SDXL"),
+    },
     "lyco": os.path.join(root_path, "models", "LyCORIS"),
 }
 
