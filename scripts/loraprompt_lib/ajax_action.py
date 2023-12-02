@@ -6,7 +6,7 @@ from . import libdata
 from . import util
 from . import loraprompttool
 from . import ajax_handler
-from . import localization
+from modules import localization
 from .dataframe_edit import get_simple_from_df
 from .dataframe_edit import save_to_dataframe
 from .dataframe_edit import append_empty
