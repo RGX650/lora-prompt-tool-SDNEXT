@@ -18,8 +18,8 @@ setting.load_setting()
 util.set_debug_logging_state(ajax_action.flag_to_boolean(setting.get_setting("debug")))
 
 def on_ui_tabs():
-    local_code == "en"
-    localization.load_localization(local_code)
+    local_id == "en"
+    localization.load_localization(local_id)
     with gr.Blocks(analytics_enabled=False) as lora_prompt_helper:
         txt2img_prompt = modules.ui.txt2img_paste_fields[0][0]
         txt2img_neg_prompt = modules.ui.txt2img_paste_fields[1][0]
