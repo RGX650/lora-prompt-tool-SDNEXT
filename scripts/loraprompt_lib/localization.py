@@ -6,7 +6,7 @@ from modules import shared
 source_filename = "localization"
 
 local_data = {}
-local_id = ""
+local_id = "en"  # Set default localization to English
 
 localizations = {}
 localizations_dir = "localizations"
@@ -367,17 +367,10 @@ def load_localization(current_localization_name):
             print(f"Error loading localization from {fn}")
 
 def get_localize(msg):
-    if msg in local_data.keys():
-        return msg
-    if msg in my_localization_data.keys():
-        if local_id in my_localization_data[msg].keys():
-            return my_localization_data[msg][local_id]
-        prefix_id = re.sub(r"[_\-\s]+","_",local_id).split("_")[0]
-        if prefix_id in my_localization_data[msg].keys():
-            return my_localization_data[msg][prefix_id]
-    return msg
+    if local_id == "en":
+        return msg  # Return the original message if the language is English
 
-def get_localize_message(msg):
+    # Your existing localization logic here
     if msg in local_data.keys():
         return local_data[msg]
     if msg in my_localization_data.keys():
@@ -387,3 +380,6 @@ def get_localize_message(msg):
         if prefix_id in my_localization_data[msg].keys():
             return my_localization_data[msg][prefix_id]
     return msg
+
+def get_localize_message(msg):
+    return get_localize(msg)  # Reuse the get_localize function
